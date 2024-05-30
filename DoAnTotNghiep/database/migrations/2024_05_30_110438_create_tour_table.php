@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tour', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('typetour_id')->unsigned();
             $table->string('tour_name', 100);
-            $table->string('picture')->nullable()->default('image.jpg');
-            $table->integer('price');
+            $table->float('price');
             $table->date('departure_day');
             $table->integer('time');
             $table->string('vehicles', 100);
             $table->string('describe', 200);
+            $table->foreign('typetour_id')->references('id')->on('typetour')->onUpdate('cascade');
             $table->timestamps();
         });
     }

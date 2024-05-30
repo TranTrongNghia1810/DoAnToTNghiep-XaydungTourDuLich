@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payment', function (Blueprint $table) {
-            $table->id();
-            $table->integer('customer_id')->unsigned();
+        Schema::create('discount', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('tour_id')->unsigned();
-            $table->date('payment_date');
-            $table->enumenum('payment_method', ['credit_card', 'bank_transfer']);
+            $table->string('name_tour');
+            $table->date('start_day');
+            $table->date('end_day');
+            $table->foreign('tour_id')->references('id')->on('tour')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payment');
+        Schema::dropIfExists('discount');
     }
 };

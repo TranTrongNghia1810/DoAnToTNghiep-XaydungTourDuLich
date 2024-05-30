@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('booktour', function (Blueprint $table) {
-            $table->id();
+        Schema::create('favoritetour', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('tour_id')->unsigned();
             $table->integer('customer_id')->unsigned();
-            $table->date('booking_date');
             $table->foreign('tour_id')->references('id')->on('tour')->onUpdate('cascade');
             $table->foreign('customer_id')->references('id')->on('customer')->onUpdate('cascade');
             $table->timestamps();
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('booktour');
+        Schema::dropIfExists('favoritetour');
     }
 };

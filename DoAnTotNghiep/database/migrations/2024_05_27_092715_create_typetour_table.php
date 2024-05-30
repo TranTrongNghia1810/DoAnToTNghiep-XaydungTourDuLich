@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('typetour', function (Blueprint $table) {
-            $table->id();
-            $table->string('name_type', 50);
+            $table->increments('id');
+            $table->string('name_type', 100);
             $table->timestamps();
         });
     }

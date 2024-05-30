@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Tour extends Model
 {
     protected $table = 'tour';
-    protected $fillable = ['id','tour_name','picture','pice','departure_day','time','vehicles','describe'];
+    protected $fillable = ['id','typetour_id','tour_name','pice','departure_day','time','vehicles','describe'];
 }
