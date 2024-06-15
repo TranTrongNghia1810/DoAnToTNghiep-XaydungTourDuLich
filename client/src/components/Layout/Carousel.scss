@@ -1,0 +1,39 @@
+/* carousel.css */
+.carousel {
+  margin-top: 42px;
+  height: 600px;
+  .carousel-control-next, .carousel-control-prev{
+
+    .carousel-control-next-icon {
+      width: 50px;
+      height: 50px;
+      margin-left: 150px;
+    }
+    .carousel-control-prev-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 150px;
+    }
+  }
+  
+}
+
+.carousel-item img {
+    height: 600px; /* Điều chỉnh chiều cao tối đa của hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ khung mà không bị biến dạng */
+  }
+  
+  .carousel-caption {
+    // background: rgba(235, 222, 222, 0.5); /* Tạo nền màu đen bán trong suốt cho caption */
+    padding: 10px;
+    border-radius: 5px;
+    h5{
+      color: rgb(248, 248, 248);
+      font-size: 40px;
+    }
+    p{
+      color: rgb(248, 245, 245);
+      font-size: 20px;
+    }
+  }
+  
